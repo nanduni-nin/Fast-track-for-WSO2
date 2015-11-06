@@ -1,0 +1,29 @@
+<?xml version="1.0"?>
+        <!--Connect XML doc to the XSLT file -->
+<?xml:stylesheet type="text/xsl" version="2.0" href="employee.xsl"?>
+<Employees>
+    <Employee>
+        <name>Nanduni</name>
+        <age>23</age>
+        <role>Java Developer</role>
+        <gender>Female</gender>
+    </Employee>
+    <Employee>
+        <name>Pubudu</name>
+        <age>24</age>
+        <role>Graphics Designer</role>
+        <gender>Male</gender>
+    </Employee>
+    <Employee>
+        <name>Malmi</name>
+        <age>23</age>
+        <role>Web designer</role>
+        <gender>Female</gender>
+    </Employee>
+    <Employee>
+        <name>Nishadi</name>
+        <age>23</age>
+        <role>Java developer</role>
+        <gender>Female</gender>
+    </Employee>
+</Employees>
