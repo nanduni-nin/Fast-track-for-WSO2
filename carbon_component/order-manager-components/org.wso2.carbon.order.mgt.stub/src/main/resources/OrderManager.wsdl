@@ -1,0 +1,89 @@
+<wsdl:definitions xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/" xmlns:ns1="http://org.apache.axis2/xsd" xmlns:ns="http://mgt.order.carbon.wso2.org" xmlns:wsaw="http://www.w3.org/2006/05/addressing/wsdl" xmlns:http="http://schemas.xmlsoap.org/wsdl/http/" xmlns:ax298="http://data.mgt.order.carbon.wso2.org/xsd" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:mime="http://schemas.xmlsoap.org/wsdl/mime/" xmlns:soap12="http://schemas.xmlsoap.org/wsdl/soap12/" targetNamespace="http://mgt.order.carbon.wso2.org">
+<wsdl:documentation>OrderManager</wsdl:documentation>
+<wsdl:types>
+<xs:schema xmlns:ax299="http://data.mgt.order.carbon.wso2.org/xsd" attributeFormDefault="qualified" elementFormDefault="qualified" targetNamespace="http://mgt.order.carbon.wso2.org">
+<xs:import namespace="http://data.mgt.order.carbon.wso2.org/xsd"/>
+<xs:element name="getItems">
+<xs:complexType>
+<xs:sequence/>
+</xs:complexType>
+</xs:element>
+<xs:element name="getItemsResponse">
+<xs:complexType>
+<xs:sequence>
+<xs:element maxOccurs="unbounded" minOccurs="0" name="return" nillable="true" type="ax298:Item"/>
+</xs:sequence>
+</xs:complexType>
+</xs:element>
+</xs:schema>
+<xs:schema attributeFormDefault="qualified" elementFormDefault="qualified" targetNamespace="http://data.mgt.order.carbon.wso2.org/xsd">
+<xs:complexType name="Item">
+<xs:sequence>
+<xs:element minOccurs="0" name="description" nillable="true" type="xs:string"/>
+<xs:element minOccurs="0" name="itemId" type="xs:long"/>
+<xs:element minOccurs="0" name="name" nillable="true" type="xs:string"/>
+<xs:element minOccurs="0" name="price" type="xs:double"/>
+</xs:sequence>
+</xs:complexType>
+</xs:schema>
+</wsdl:types>
+<wsdl:message name="getItemsRequest">
+<wsdl:part name="parameters" element="ns:getItems"/>
+</wsdl:message>
+<wsdl:message name="getItemsResponse">
+<wsdl:part name="parameters" element="ns:getItemsResponse"/>
+</wsdl:message>
+<wsdl:portType name="OrderManagerPortType">
+<wsdl:operation name="getItems">
+<wsdl:input message="ns:getItemsRequest" wsaw:Action="urn:getItems"/>
+<wsdl:output message="ns:getItemsResponse" wsaw:Action="urn:getItemsResponse"/>
+</wsdl:operation>
+</wsdl:portType>
+<wsdl:binding name="OrderManagerSoap11Binding" type="ns:OrderManagerPortType">
+<soap:binding transport="http://schemas.xmlsoap.org/soap/http" style="document"/>
+<wsdl:operation name="getItems">
+<soap:operation soapAction="urn:getItems" style="document"/>
+<wsdl:input>
+<soap:body use="literal"/>
+</wsdl:input>
+<wsdl:output>
+<soap:body use="literal"/>
+</wsdl:output>
+</wsdl:operation>
+</wsdl:binding>
+<wsdl:binding name="OrderManagerSoap12Binding" type="ns:OrderManagerPortType">
+<soap12:binding transport="http://schemas.xmlsoap.org/soap/http" style="document"/>
+<wsdl:operation name="getItems">
+<soap12:operation soapAction="urn:getItems" style="document"/>
+<wsdl:input>
+<soap12:body use="literal"/>
+</wsdl:input>
+<wsdl:output>
+<soap12:body use="literal"/>
+</wsdl:output>
+</wsdl:operation>
+</wsdl:binding>
+<wsdl:binding name="OrderManagerHttpBinding" type="ns:OrderManagerPortType">
+<http:binding verb="POST"/>
+<wsdl:operation name="getItems">
+<http:operation location="getItems"/>
+<wsdl:input>
+<mime:content type="text/xml" part="parameters"/>
+</wsdl:input>
+<wsdl:output>
+<mime:content type="text/xml" part="parameters"/>
+</wsdl:output>
+</wsdl:operation>
+</wsdl:binding>
+<wsdl:service name="OrderManager">
+<wsdl:port name="OrderManagerHttpsSoap11Endpoint" binding="ns:OrderManagerSoap11Binding">
+<soap:address location="https://10.100.5.119:9443/services/OrderManager.OrderManagerHttpsSoap11Endpoint/"/>
+</wsdl:port>
+<wsdl:port name="OrderManagerHttpsSoap12Endpoint" binding="ns:OrderManagerSoap12Binding">
+<soap12:address location="https://10.100.5.119:9443/services/OrderManager.OrderManagerHttpsSoap12Endpoint/"/>
+</wsdl:port>
+<wsdl:port name="OrderManagerHttpsEndpoint" binding="ns:OrderManagerHttpBinding">
+<http:address location="https://10.100.5.119:9443/services/OrderManager.OrderManagerHttpsEndpoint/"/>
+</wsdl:port>
+</wsdl:service>
+</wsdl:definitions>

@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ProjectModuleManager">
+    <modules>
+      <module fileurl="file://$PROJECT_DIR$/order-manager.iml" filepath="$PROJECT_DIR$/order-manager.iml" />
+      <module fileurl="file://$PROJECT_DIR$/order-manager-components/order-manager-components.iml" filepath="$PROJECT_DIR$/order-manager-components/order-manager-components.iml" />
+      <module fileurl="file://$PROJECT_DIR$/order-manager-components/org.wso2.carbon.order.mgt/org.wso2.carbon.order.mgt.iml" filepath="$PROJECT_DIR$/order-manager-components/org.wso2.carbon.order.mgt/org.wso2.carbon.order.mgt.iml" />
+      <module fileurl="file://$PROJECT_DIR$/order-manager-components/org.wso2.carbon.order.mgt.stub/org.wso2.carbon.order.mgt.stub.iml" filepath="$PROJECT_DIR$/order-manager-components/org.wso2.carbon.order.mgt.stub/org.wso2.carbon.order.mgt.stub.iml" />
+      <module fileurl="file://$PROJECT_DIR$/order-manager-components/org.wso2.carbon.order.mgt.ui/org.wso2.carbon.order.mgt.ui.iml" filepath="$PROJECT_DIR$/order-manager-components/org.wso2.carbon.order.mgt.ui/org.wso2.carbon.order.mgt.ui.iml" />
+    </modules>
+  </component>
+</project>
