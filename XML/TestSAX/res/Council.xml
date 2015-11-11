@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?xml-stylesheet type="text/xsl" href="Council.xsl"?>
+
+<council 
+	province="Uva"
+	location="Badulla">
+	
+	<minister>Shashindra</minister>
+	
+	<district name="Badulla">
+		<size>5000 Acres</size>
+		<population>350000</population>
+		<elevation>900m</elevation>
+		<type>Semi Rural</type>
+	</district>
+	
+  	<district name="Moneragala">
+		<size>6000 Acres</size>
+		<population>220000</population>
+		<elevation>330m</elevation>
+		<type>Rural</type>
+	</district>
+	
+	<ministry name="Education">
+		<subminister>Nelum Sirisena</subminister>
+		<secretary>Piyadasa Rathnayaka</secretary>
+		<priority>High</priority>
+		<status>Highly Active</status>
+	</ministry>
+	
+	<ministry name="Defense">
+		<subminister>Sudarshana Denipitiya</subminister>
+		<secretary>Vijamu PunchiBandara</secretary>
+		<priority>High</priority>
+		<status>fairly Active</status>
+	</ministry>
+	
+</council>

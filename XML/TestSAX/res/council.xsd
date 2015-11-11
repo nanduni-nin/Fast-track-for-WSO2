@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<xsd:schema xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+
+  <xsd:complexType name="district">
+    <xsd:sequence>
+      <xsd:element name="size" type="xsd:string" />
+      <xsd:element name="population" type="xsd:string" />
+      <xsd:element name="elevation" type="xsd:string" />
+      <xsd:element name="type" type="xsd:string" />
+    </xsd:sequence>
+    <xsd:attribute name="name" type="xsd:string" />	
+  </xsd:complexType>
+
+  <xsd:complexType name="ministry">
+    <xsd:sequence>
+      <xsd:element name="subminister" type="xsd:string" maxOccurs="1"/>
+      <xsd:element name="secretary" type="xsd:string" maxOccurs="1"/>
+      <xsd:element name="priority" type="xsd:string" />
+      <xsd:element name="status" type="xsd:string" />
+    </xsd:sequence>
+    <xsd:attribute name="name" type="xsd:string" />	
+  </xsd:complexType>
+  
+  <xsd:element name="council">
+    <xsd:complexType>
+      <xsd:sequence>
+        <xsd:element name="minister" type="xsd:string" maxOccurs="1" />
+        <xsd:element name="district" type="district" minOccurs="2" maxOccurs="2"/>
+        <xsd:element name="ministry" type="ministry" minOccurs="2" maxOccurs="2"/>
+      </xsd:sequence>
+      <xsd:attribute name="province"/>
+      <xsd:attribute name="location"/>
+    </xsd:complexType>
+  </xsd:element>
+
+</xsd:schema>
